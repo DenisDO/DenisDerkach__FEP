@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=cyrillic");
+/* Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* End of Eric Meyer's CSS Reset */
+body {
+  font-family: Roboto; }
+
+.general_container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .general_container header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    background-color: white;
+    box-sizing: border-box;
+    border-bottom: 3px solid #be1622; }
+    .general_container header h1 a {
+      text-decoration: none;
+      font-size: 30px;
+      color: #be1622;
+      font-weight: 600;
+      padding: 0 25px;
+      transition: text-shadow, 200ms; }
+      .general_container header h1 a:hover {
+        text-shadow: 0 0 5px #AFAFAF; }
+    .general_container header ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start; }
+      .general_container header ul li {
+        padding: 0 25px; }
+        .general_container header ul li a {
+          text-decoration: none;
+          color: #696664;
+          font-weight: 300; }
+          .general_container header ul li a:hover {
+            color: #be1622; }
+    .general_container header .header_button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      transition-property: border, background-color;
+      transition-duration: 200ms;
+      margin-right: 25px;
+      position: relative;
+      display: none; }
+      .general_container header .header_button::after {
+        display: none;
+        content: '';
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../images/burger.png); }
+      .general_container header .header_button:hover {
+        background-color: #F5F2F0; }
+  .general_container .mobile__menu__hidden {
+    background-color: #F5F2F0;
+    border-bottom: 1px solid #AFAFAF;
+    transition: 500ms;
+    display: none; }
+    .general_container .mobile__menu__hidden__header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      .general_container .mobile__menu__hidden__header li {
+        padding: 10px; }
+        .general_container .mobile__menu__hidden__header li a {
+          text-decoration: none;
+          color: #696664; }
+          .general_container .mobile__menu__hidden__header li a:hover {
+            color: #be1622; }
+    .general_container .mobile__menu__hidden__nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 10px; }
+      .general_container .mobile__menu__hidden__nav li {
+        padding: 10px; }
+        .general_container .mobile__menu__hidden__nav li a {
+          text-decoration: none;
+          color: #696664; }
+          .general_container .mobile__menu__hidden__nav li a:hover {
+            color: #be1622; }
+  .general_container .mobile__menu__active {
+    display: block; }
+  .general_container .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%; }
+    .general_container .main .nav {
+      background-color: #F5F2F0;
+      border-right: 1px solid #AFAFAF;
+      box-sizing: border-box;
+      height: inherit;
+      margin-right: 80px;
+      position: relative;
+      transition: 500ms;
+      transform: translateX(0); }
+      .general_container .main .nav__hidden {
+        transform: translateX(-300px); }
+      .general_container .main .nav .nav_button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        right: -50px;
+        box-sizing: border-box;
+        transition-property: border, background-color;
+        transition-duration: 200ms; }
+        .general_container .main .nav .nav_button::after {
+          display: block;
+          content: '';
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: url(../images/burger.png); }
+        .general_container .main .nav .nav_button:hover {
+          background-color: #F5F2F0; }
+      .general_container .main .nav ul {
+        width: 300px; }
+        .general_container .main .nav ul li {
+          margin: 25px; }
+          .general_container .main .nav ul li a {
+            text-decoration: none;
+            color: #696664; }
+            .general_container .main .nav ul li a:hover {
+              color: #be1622; }
+    .general_container .main .article {
+      height: inherit;
+      padding: 25px 25px 25px 0;
+      box-sizing: border-box;
+      transition: 500ms;
+      transform: translateX(0);
+      display: flex;
+      flex-direction: column; }
+      .general_container .main .article h2 {
+        font-weight: 700;
+        font-size: 18px;
+        color: #313131; }
+      .general_container .main .article p {
+        font-weight: 400;
+        font-size: 14px;
+        color: #313131; }
+      .general_container .main .article__full {
+        transform: translateX(-150px); }
+  .general_container footer {
+    height: 70px;
+    background-color: #E9E9E9;
+    box-sizing: border-box;
+    border-top: 1px solid #AFAFAF;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center; }
+
+@media all and (max-width: 992px) {
+  .general_container header {
+    flex-direction: row;
+    justify-content: space-between; }
+    .general_container header ul {
+      display: none; }
+    .general_container header .header_button {
+      order: 1;
+      display: block; }
+      .general_container header .header_button::after {
+        display: block; }
+  .general_container .main {
+    justify-content: center;
+    align-items: center;
+    padding: 25px; }
+    .general_container .main .nav {
+      display: none; }
+    .general_container .main .article {
+      padding: 0; } }
+@media all and (max-width: 768px) {
+  footer {
+    display: none; } }
+.form__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.form__input {
+  width: 120px;
+  height: 20px;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  outline-color: #be1622;
+  border: none;
+  background-color: #E9E9E9;
+  font-family: Roboto; }
+
+.form__button {
+  margin: 20px;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #E9E9E9;
+  font-family: Roboto; }
+  .form__button:hover {
+    background-color: #be1622; }
+
+.table__container {
+  background-color: #F5F2F0;
+  color: #696664; }
+
+.table {
+  width: 100%; }
+
+.table__item td {
+  border: 1px solid #696664;
+  padding: 10px 15px;
+  transition: 200ms; }
+  .table__item td:hover {
+    background-color: #be1622;
+    color: #313131; }
+
+.footer__container {
+  background-color: #be1622;
+  height: 100%;
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+  font-family: Roboto;
+  box-sizing: border-box; }
+
+.timer__container {
+  background-color: #E9E9E9;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.timer__container__item {
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.error__container {
+  border: 1px solid #be1622;
+  padding: 20px;
+  font-family: Roboto; }
+
+/*# sourceMappingURL=main.css.map */

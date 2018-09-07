@@ -1,0 +1,417 @@
+/* Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+
+body {
+	font-family: Roboto;
+}
+
+.general_container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	header {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		height: 70px;
+		background-color: $headerBackgroundColor;
+		box-sizing: border-box;
+		border-bottom: 3px solid $headerLineColor;
+		
+		h1 {
+			a {
+				text-decoration: none;
+				font-size: 30px;
+				color: $headerLogoColor;
+				font-weight: 600;
+				padding: 0 25px;
+				transition: text-shadow, 200ms;
+
+				&:hover {
+					text-shadow: 0 0 5px $headerLogoShadowColor;
+				}
+			}
+		}
+
+		ul {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+
+			li {
+				padding: 0 25px;
+				a {
+					text-decoration: none;
+					color: $headerLinkColor;
+					font-weight: 300;
+
+					&:hover {
+						color: $headerLinkHoverColor;
+					}
+				}
+			}
+		}
+
+		.header_button {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			box-sizing: border-box;
+			transition-property: border, background-color;
+			transition-duration: 200ms;
+			margin-right: 25px;
+			position: relative;
+			display: none;
+
+			&::after {
+				display: none;
+				content: '';
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: url(../images/burger.png);
+			}
+
+			&:hover {
+				background-color: $asideBurgerHoverBackground;
+			}
+		}
+
+	}
+
+	.mobile__menu__hidden {
+		background-color: $mobileMenuBackgroundColor;
+		border-bottom: 1px solid $mobileMenuLineColor;
+		transition: 500ms;
+		display: none;
+		// transform: translateX(-100%);
+
+		&__header {
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+
+			li {
+				padding: 10px;
+				a {
+					text-decoration: none;
+					color: $mobileMenuHeaderLinkColor;
+
+					&:hover {
+						color: $mobileMenuHeaderLinkActiveColor;
+					}
+				}
+			}
+		}
+
+		&__nav {
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			margin-top: 10px;
+
+			li {
+				padding: 10px;
+				a {
+					text-decoration: none;
+					color: $mobileMenuNavLinkColor;
+
+					&:hover {
+						color: $mobileMenuNavLinkActiveColor;
+					}
+				}
+			}
+		}
+	}
+
+	.mobile__menu__active {
+		// transform: translateX(0);
+		display: block;
+	}
+
+	.main {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		height: 100%;
+
+		.nav {
+			background-color: $asideBackgroundColor;
+			border-right: 1px solid $asideLineColor;
+			box-sizing: border-box;
+			height: inherit;
+			margin-right: 80px;
+			position: relative;
+			transition: 500ms;
+			transform: translateX(0);
+
+			&__hidden {
+				transform: translateX(-300px);
+			}
+
+			.nav_button {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				position: absolute;
+				top: 20px;
+				right: -50px;
+				box-sizing: border-box;
+				transition-property: border, background-color;
+				transition-duration: 200ms;
+
+				&::after {
+					display: block;
+					content: '';
+					width: 30px;
+					height: 30px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					background: url(../images/burger.png);
+				}
+
+				&:hover {
+					background-color: $asideBurgerHoverBackground;
+				}
+			}
+
+			ul {
+				width: 300px;
+
+				li {
+					margin: 25px;
+
+					a {
+						text-decoration: none;
+						color: $asideLinkColor;
+
+						&:hover {
+							color: $asideLinkHoverColor;
+						}
+					}
+				}
+			}
+		}
+
+		.article {
+			height: inherit;
+			padding: 25px 25px 25px 0;
+			box-sizing: border-box;
+			transition: 500ms;
+			transform: translateX(0);
+			display: flex;
+			flex-direction: column;
+
+			h2 {
+				font-weight: 700;
+				font-size: 18px;
+				color: $contentHeadersColor;
+			}
+
+			p {
+				font-weight: 400;
+				font-size: 14px;
+				color: $contentTextColor;
+			}
+
+			&__full {
+				transform: translateX(-150px);
+				
+			}
+		}
+	}
+
+
+	footer {
+		height: 70px;
+		background-color: $footerBackgroundColor;
+		box-sizing: border-box;
+		border-top: 1px solid $footerLineColor;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+}
+
+@media all and (max-width: 992px) {
+	.general_container {
+
+		header {
+			flex-direction: row;
+			justify-content: space-between;
+
+			ul {
+				display: none;
+			}
+
+			.header_button {
+				order: 1;
+				display: block;
+	
+				&::after {
+					display: block;
+				}
+			}
+		}
+
+		.main {
+			justify-content: center;
+			align-items: center;
+			padding: 25px;
+
+			.nav {
+				display: none;
+			}
+			
+			.article {
+				padding: 0;
+			}
+		}
+	}
+}
+
+@media all and (max-width: 768px) {
+	footer {
+		display: none;
+	}
+}
+
+.form__container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.form__input {
+	width: 120px;
+	height: 20px;
+	margin: 20px;
+	padding: 5px;
+	border-radius: 5px;
+	outline-color: $thunderbird;
+	border: none;
+	background-color: $mercury;
+	font-family: Roboto;
+}
+
+.form__button {
+	margin: 20px;
+	width: 80px;
+	height: 30px;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	background-color: $mercury;
+	font-family: Roboto;
+
+	&:hover {
+		background-color: $thunderbird;
+	}
+}
+
+.table__container {
+	background-color: $pampas;
+	color: $flint;
+}
+
+.table {
+	width: 100%
+}
+
+.table__item td {
+	border: 1px solid $flint;
+	padding: 10px 15px;
+	transition: 200ms;
+
+	&:hover {
+		background-color: $thunderbird;
+		color: $mineShaft;
+	}
+}
+
+.footer__container {
+	background-color: $thunderbird;
+	height: 100%;
+	padding: 20px;
+	color: white;
+	font-size: 20px;
+	font-family: Roboto;
+	box-sizing: border-box;
+}
+
+.timer__container {
+	background-color: $mercury;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.timer__container__item {
+	padding: 7px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.error__container {
+	border: 1px solid $thunderbird;
+	padding: 20px;
+	font-family: Roboto;
+}
